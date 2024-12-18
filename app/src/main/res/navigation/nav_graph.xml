@@ -1,0 +1,26 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/brandListFragment">
+
+    <fragment
+        android:id="@+id/brandListFragment"
+        android:name="com.example.mobileprinters.presentation.fragments.BrandListFragment"
+        android:label="Printer Brands"
+        tools:layout="@layout/fragment_brand_list">
+        <action
+            android:id="@+id/action_brandListFragment_to_brandDetailFragment"
+            app:destination="@id/brandDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/brandDetailFragment"
+        android:name="com.example.mobileprinters.presentation.fragments.BrandDetailFragment"
+        android:label="Brand Detail"
+        tools:layout="@layout/fragment_brand_detail">
+        <argument
+            android:name="brand"
+            app:argType="com.example.mobileprinters.domain.models.PrinterBrand" />
+    </fragment>
+</navigation>
